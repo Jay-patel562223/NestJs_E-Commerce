@@ -9,6 +9,7 @@ import {
 } from 'src/shared/utility/passwordHandler';
 import { sendEmail, htmlTemplate } from 'src/shared/utility/emailHandler';
 import { generateAuthToken } from 'src/shared/utility/tokenHandler';
+import { compareOtp, generateHashOtp } from 'src/shared/utility/otpHandler';
 
 @Injectable()
 export class UsersService {
@@ -42,19 +43,19 @@ export class UsersService {
       }
 
       //* generate the OTP
-      const otp = Math.floor(Math.random() * 900000) + 100000;
-
+      const otp: number = Math.floor(Math.random() * 900000) + 100000;
+      const hashOtp: string = await generateHashOtp(otp.toString());
       const otpExpiryTime = new Date();
       otpExpiryTime.setMinutes(otpExpiryTime.getMinutes() + 10);
 
       //* create a new user
       const newUser = await this.userDB.create({
         ...createUserDto,
-        otp,
+        otp: hashOtp,
         otpExpiryTime,
       });
       if (newUser.type !== userTypes.ADMIN) {
-        let html = htmlTemplate(otp);
+        let html = htmlTemplate('sign up', otp);
         sendEmail(newUser.email, 'Verify Your Email', html);
       }
 
@@ -120,9 +121,9 @@ export class UsersService {
         email,
       });
       if (!user) {
-        throw new Error('User not found');
+        throw new Error('User not found!');
       }
-      if (user.otp !== otp) {
+      if (!(await compareOtp(otp, user?.otp))) {
         throw new Error('Invalid otp');
       }
       if (user.otpExpiryTime < new Date()) {
@@ -136,12 +137,13 @@ export class UsersService {
         {
           isVerified: true,
           otp: '',
+          otpExpiryTime: null,
         },
       );
 
       return {
         success: true,
-        message: 'Email verified successfully. You can login now',
+        message: 'Email verified successfully',
         result: {
           _id: verifiedUser.id.toString(),
           name: verifiedUser.name,
@@ -152,6 +154,120 @@ export class UsersService {
     } catch (error) {
       throw error;
     }
+  }
+
+  async sendOtpEmail(email: string, isForgotPassword: any) {
+    try {
+      const user = await this.userDB.findOne({
+        email,
+      });
+      if (!user) {
+        throw new Error('User not found!');
+      }
+      if (user.isVerified && isForgotPassword != 1) {
+        throw new Error('Email already verified');
+      }
+
+      const otp: number = Math.floor(Math.random() * 900000) + 100000;
+      const hashOtp: string = await generateHashOtp(otp.toString());
+
+      const otpExpiryTime = new Date();
+      otpExpiryTime.setMinutes(otpExpiryTime.getMinutes() + 10);
+
+      await this.userDB.findOneAndUpdate(
+        {
+          email,
+        },
+        {
+          otp: hashOtp,
+          otpExpiryTime,
+        },
+      );
+      let html = htmlTemplate(
+        isForgotPassword == 1 ? 'forgot password' : 'sign up',
+        otp,
+      );
+      sendEmail(
+        user.email,
+        isForgotPassword == 1 ? 'Forgot Your Password' : 'Verify Your Email',
+        html,
+      );
+
+      return {
+        success: true,
+        message: 'Otp sent successfully',
+        result: { email: user.email },
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async forgotPasswordEmail(email: string) {
+    try {
+      const user = await this.userDB.findOne({
+        email,
+      });
+      if (!user) {
+        throw new Error('User not found!');
+      }
+
+      const otp: number = Math.floor(Math.random() * 900000) + 100000;
+      const hashOtp: string = await generateHashOtp(otp.toString());
+
+      const otpExpiryTime = new Date();
+      otpExpiryTime.setMinutes(otpExpiryTime.getMinutes() + 10);
+
+      await this.userDB.findOneAndUpdate(
+        {
+          email,
+        },
+        {
+          otp: hashOtp,
+          otpExpiryTime,
+        },
+      );
+      let html = htmlTemplate('forgot password', otp);
+      sendEmail(user.email, 'Forgot Your Password', html);
+
+      return {
+        success: true,
+        message: 'Otp sent successfully',
+        result: { email: user.email },
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async forgotPassword(email: string, newPasssword: string) {
+    const user = await this.userDB.findOne({
+      email,
+    });
+    if (!user) {
+      throw new Error('User not found!');
+    }
+    if (!newPasssword || newPasssword == '') {
+      throw new Error('New password is required!');
+    }
+    const password = await generateHashPassword(newPasssword);
+
+    await this.userDB.findOneAndUpdate(
+      {
+        email,
+      },
+      {
+        password,
+      },
+    );
+
+    return {
+      success: true,
+      message: 'Password change successfully',
+      result: {
+        email,
+      },
+    };
   }
 
   findAll() {

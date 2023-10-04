@@ -9,6 +9,7 @@ import {
   HttpCode,
   HttpStatus,
   Res,
+  Put,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -46,6 +47,30 @@ export class UsersController {
   @Get('/verify-email/:email/:otp')
   async verifyEmail(@Param('email') email: string, @Param('otp') otp: string){
     return await this.usersService.verifyEmail(email,otp)
+  }
+
+  @Get('send-otp-email/:email')
+  async sendOtpEmail(@Param('email') email: string, @Body() forgotPassword: { isForgotPassword: any}){
+    return await this.usersService.sendOtpEmail(email, forgotPassword.isForgotPassword)
+  }
+
+  @Get('forgot-password-email/:email')
+  async forgotPasswordEmail(@Param('email') email: string){
+    return await this.usersService.forgotPasswordEmail(email)
+  }
+
+  @Patch('/forgot-password/:email')
+  async forgotPassword(@Param('email') email: string, @Body() newPassword: { newPassword: string}){
+    return await this.usersService.forgotPassword(email, newPassword.newPassword)
+  }
+
+  @Put('/logout')
+  async logout(@Res() res: Response) {
+    res.clearCookie('_digi_auth_token')
+    return res.status(HttpStatus.OK).json({
+      success: true,
+      message: 'Logout successfully'
+    })
   }
 
   @Get()
