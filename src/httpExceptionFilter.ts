@@ -30,7 +30,7 @@ export class AllExceptionFilter implements ExceptionFilter {
     const exceptionResponse =
       exception instanceof HttpException
         ? ctx.getResponse()
-        : String(exception);
+        : String(exception.message);
 
     const responseBody = {
       statusCode: httpStatus,

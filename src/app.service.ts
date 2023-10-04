@@ -6,7 +6,11 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getTest(): string {
-    return "Test 123"
+  getTest(): any {
+    return {
+      message: "Test API",
+      result: "Test 123",
+      success: true
+    }
   }
 }
