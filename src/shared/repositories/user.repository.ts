@@ -13,6 +13,14 @@ export class UserRepository {
     return await this.userModel.findOne(query);
   }
 
+  async findById(id: string) {
+    return await this.userModel.findById(id);
+  }
+  
+  async find(query: any) {
+    return await this.userModel.find(query);
+  }
+
   async create(data: Record<string, any>) {
     return await this.userModel.create(data);
   }

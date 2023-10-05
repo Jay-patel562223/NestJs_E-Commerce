@@ -270,8 +270,20 @@ export class UsersService {
     };
   }
 
-  findAll() {
-    return `This action returns all users`;
+  async findAll(type: string) {
+    try {
+      const user = await this.userDB.find({type})
+      return {
+        success: true,
+        message: 'User fetched successfully',
+        result: user
+      }
+      
+    } catch (error) {
+      throw error
+    }
+
+
   }
 
   findOne(id: number) {
