@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsIn, IsOptional } from "class-validator";
+import { IsNotEmpty, IsString, IsIn, IsOptional, IsEnum } from "class-validator";
 import { userTypes } from "src/shared/schema/users";
 
 export class CreateUserDto {
@@ -16,7 +16,7 @@ export class CreateUserDto {
 
     @IsNotEmpty()
     @IsString()
-    @IsIn([userTypes.ADMIN, userTypes.CUSTOMER])
+    @IsEnum(userTypes)
     type: string
 
     @IsString()

@@ -5,7 +5,10 @@ import cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
   app.use(cookieParser())
+  app.setGlobalPrefix(process.env.APP_PREFIX)
+  
   app.useGlobalInterceptors(new TransformationInterceptor())
   await app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`)

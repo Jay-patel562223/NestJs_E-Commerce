@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AllExceptionFilter } from './httpExceptionFilter';
 import { UsersModule } from './users/users.module';
 import { ProductsModule } from './products/products.module';
+import { StripeModule } from './stripe/stripe.module';
 
 @Module({
   imports: [
@@ -16,6 +17,9 @@ import { ProductsModule } from './products/products.module';
     MongooseModule.forRoot(process.env.MONGODB_URL),
     UsersModule,
     ProductsModule,
+    StripeModule.forRoot(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2023-08-16',
+    }),
   ],
   controllers: [AppController],
   providers: [
