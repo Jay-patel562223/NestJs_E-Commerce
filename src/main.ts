@@ -2,16 +2,18 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { TransformationInterceptor } from './responseInterceptor';
 import cookieParser from 'cookie-parser';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.use(cookieParser())
-  app.setGlobalPrefix(process.env.APP_PREFIX)
-  
-  app.useGlobalInterceptors(new TransformationInterceptor())
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  app.use(cookieParser());
+  app.setGlobalPrefix(process.env.APP_PREFIX);
+
+  app.useGlobalInterceptors(new TransformationInterceptor());
   await app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`)
+    console.log(`Server is running on port ${process.env.PORT}`);
   });
 }
 bootstrap();

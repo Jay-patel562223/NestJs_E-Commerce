@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { userTypes } from 'src/shared/schema/users';
@@ -71,6 +71,9 @@ export class UsersService {
         },
       };
     } catch (error) {
+      if (error.name === 'ValidationError') {
+        throw new BadRequestException(error);
+      }
       throw error;
     }
   }
@@ -241,49 +244,53 @@ export class UsersService {
   }
 
   async forgotPassword(email: string, newPasssword: string) {
-    const user = await this.userDB.findOne({
-      email,
-    });
-    if (!user) {
-      throw new Error('User not found!');
-    }
-    if (!newPasssword || newPasssword == '') {
-      throw new Error('New password is required!');
-    }
-    const password = await generateHashPassword(newPasssword);
-
-    await this.userDB.findOneAndUpdate(
-      {
+    try {
+      const user = await this.userDB.findOne({
         email,
-      },
-      {
-        password,
-      },
-    );
+      });
+      if (!user) {
+        throw new Error('User not found!');
+      }
+      if (!newPasssword || newPasssword == '') {
+        throw new Error('New password is required!');
+      }
+      const password = await generateHashPassword(newPasssword);
 
-    return {
-      success: true,
-      message: 'Password change successfully',
-      result: {
-        email,
-      },
-    };
+      await this.userDB.findOneAndUpdate(
+        {
+          email,
+        },
+        {
+          password,
+        },
+      );
+
+      return {
+        success: true,
+        message: 'Password change successfully',
+        result: {
+          email,
+        },
+      };
+    } catch (error) {
+      if (error.name === 'ValidationError') {
+        throw new BadRequestException(error);
+      }
+      throw error;
+    }
   }
 
   async findAll(type: string) {
     try {
-      const user = await this.userDB.find({type})
+      const user = await this.userDB.find({ type });
       return {
         success: true,
         message: 'User fetched successfully',
-        result: user
-      }
-      
+        result: user,
+      };
     } catch (error) {
-      throw error
+      throw error;
     }
-
-
   }
 
   findOne(id: number) {
