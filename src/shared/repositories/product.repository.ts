@@ -63,4 +63,8 @@ export class ProductRepository {
     const totalProductCount = await this.productModel.countDocuments(query);
     return { totalProductCount, products };
   }
+
+  async findRelatedProducts(query: Record<string, any>) {
+    return await this.productModel.find(query).limit(4);
+  }
 }
