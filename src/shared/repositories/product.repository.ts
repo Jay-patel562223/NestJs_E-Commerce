@@ -67,4 +67,10 @@ export class ProductRepository {
   async findRelatedProducts(query: Record<string, any>) {
     return await this.productModel.find(query).limit(4);
   }
+
+  async findOneAndUpdate(query: Record<string, any>, update: any) {
+    return await this.productModel.findOneAndUpdate(query, update, {
+      new: true,
+    });
+  }
 }

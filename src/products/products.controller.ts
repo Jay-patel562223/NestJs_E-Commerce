@@ -9,6 +9,7 @@ import {
   Query,
   UseInterceptors,
   UploadedFile,
+  Put,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -17,6 +18,7 @@ import { Roles } from 'src/shared/middleware/role.decorators';
 import { userTypes } from 'src/shared/schema/users';
 import { GetProductQueryDto } from './dto/get-product-query.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { ProductSkuDto, ProductSkuDtoArr } from './dto/product-sku.dto';
 
 @Controller('products')
 export class ProductsController {
@@ -62,6 +64,25 @@ export class ProductsController {
     @UploadedFile() file: ParameterDecorator,
   ) {
     return await this.productsService.uploadProductImage(id, file);
+  }
+
+  @Post('/:productId/skus')
+  @Roles(userTypes.ADMIN)
+  async createProductSku(
+    @Param('productId') productId: string,
+    @Body() productSkuDto: ProductSkuDtoArr,
+  ) {
+    return await this.productsService.createProductSku(productId, productSkuDto)
+  }
+
+  @Put('/:productId/skus/:skuId')
+  @Roles(userTypes.ADMIN)
+  async updateProductSkuDetails(
+    @Param('productId') productId: string,
+    @Param('skuId') skuId: string,
+    @Body() updateProductSkuDto: ProductSkuDto 
+  ){
+    return await this.productsService.updateProductSkuDetails(productId, skuId, updateProductSkuDto)
   }
 
   @Delete(':id')

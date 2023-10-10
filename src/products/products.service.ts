@@ -9,6 +9,7 @@ import { GetProductQueryDto } from './dto/get-product-query.dto';
 import qs2m from 'qs-to-mongo';
 import cloudinary from 'cloudinary';
 import { unlinkSync } from 'fs';
+import { ProductSkuDto, ProductSkuDtoArr } from './dto/product-sku.dto';
 
 @Injectable()
 export class ProductsService {
@@ -230,6 +231,119 @@ export class ProductsService {
         message: 'Image uploaded successfully',
         success: true,
         result: resOfCloudinary.secure_url,
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  // This is for Create one or multiple SKU details for product
+  async createProductSku(
+    productId: string,
+    productSkuDto: ProductSkuDtoArr,
+  ): Promise<{
+    message: string;
+    success: boolean;
+    result: Products;
+  }> {
+    try {
+      const product = await this.productDB.findById(productId);
+      if (!product) {
+        throw new Error('Product does not exist');
+      }
+
+      for (let data of productSkuDto.skuDetails) {
+        const skuCode = Math.random().toString(36).substring(2, 5) + Date.now();
+        data.skuCode = skuCode;
+        if (!data.stripePriceId) {
+          const stripePriceDetails = await this.stripeClient.prices.create({
+            unit_amount: data.price * 100,
+            currency: 'inr',
+            product: product.stripeProductId,
+            metadata: {
+              skuCode: skuCode,
+              lifetime: data.lifetime + '',
+              productId: productId,
+              price: data.price,
+              productName: product.productName,
+              productImage: product.image,
+            },
+          });
+          data.stripePriceId = stripePriceDetails.id;
+        }
+      }
+
+      const skuDetails = await this.productDB.findByIdAndUpdate(productId, {
+        $push: { skuDetails: productSkuDto.skuDetails },
+      });
+
+      return {
+        message: 'Product SKU updated successfully',
+        success: true,
+        result: skuDetails,
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async updateProductSkuDetails(
+    productId: string,
+    skuId: string,
+    updateProductSkuDto: ProductSkuDto,
+  ): Promise<{
+    message: string;
+    success: boolean;
+    result: Products;
+  }> {
+    try {
+      const product = await this.productDB.findById(productId);
+      if (!product) {
+        throw new Error('Product does not exist');
+      }
+
+      const sku = product.skuDetails.find((sku) => sku._id == skuId);
+      if (!sku) {
+        throw new Error('SKU deos not exist');
+      }
+
+      if (updateProductSkuDto.price !== sku.price) {
+        const stripePriceDetails = await this.stripeClient.prices.create({
+          unit_amount: updateProductSkuDto.price * 100,
+          currency: 'inr',
+          product: product.stripeProductId,
+          metadata: {
+            skuCode: sku.skuCode,
+            lifetime: updateProductSkuDto.lifetime + '',
+            productId: productId,
+            price: updateProductSkuDto.price,
+            productName: product.productName,
+            productImage: product.image,
+          },
+        });
+        updateProductSkuDto.stripePriceId = stripePriceDetails.id;
+        await this.stripeClient.prices.update(sku.stripePriceId, {
+          active: false,
+        });
+      }
+
+      const dataForUpdate = {}
+      for (const key in updateProductSkuDto){
+        if(updateProductSkuDto.hasOwnProperty(key)){
+          dataForUpdate[`skuDetails.$.${key}`] = updateProductSkuDto[key]
+        }
+      }
+      const updatedSkuDetails = await this.productDB.findOneAndUpdate(
+        { _id: productId, 'skuDetails._id': skuId },
+        {
+          $set: dataForUpdate,
+        },
+      );
+
+      return {
+        message: 'Product SKU updated successfully',
+        success: true,
+        result: updatedSkuDetails,
       };
     } catch (error) {
       throw error;
