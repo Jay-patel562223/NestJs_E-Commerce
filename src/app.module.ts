@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
@@ -7,6 +7,7 @@ import { AllExceptionFilter } from './httpExceptionFilter';
 import { UsersModule } from './users/users.module';
 import { ProductsModule } from './products/products.module';
 import { StripeModule } from './stripe/stripe.module';
+import { LicenseModule } from './license/license.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { StripeModule } from './stripe/stripe.module';
     StripeModule.forRoot(process.env.STRIPE_SECRET_KEY, {
       apiVersion: '2023-08-16',
     }),
+    LicenseModule,
   ],
   controllers: [AppController],
   providers: [
