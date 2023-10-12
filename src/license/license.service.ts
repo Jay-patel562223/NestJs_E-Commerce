@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { CreateLicenseDto } from './dto/create-license.dto';
 import { UpdateLicenseDto } from './dto/update-license.dto';
 import { ProductRepository } from 'src/shared/repositories/product.repository';
@@ -39,6 +39,9 @@ export class LicenseService {
         result: license,
       };
     } catch (error) {
+      if (error.name === 'ValidationError') {
+        throw new BadRequestException(error);
+      }
       throw error;
     }
   }
@@ -83,14 +86,14 @@ export class LicenseService {
     result: License;
   }> {
     try {
-      const license = await this.licenseDB.findById(id)
+      const license = await this.licenseDB.findById(id);
       return {
-        message: "License fetched successfully",
+        message: 'License fetched successfully',
         success: true,
-        result: license
-      }
+        result: license,
+      };
     } catch (error) {
-      throw error
+      throw error;
     }
   }
 
@@ -125,6 +128,9 @@ export class LicenseService {
         result: updatedLicense,
       };
     } catch (error) {
+      if (error.name === 'ValidationError') {
+        throw new BadRequestException(error);
+      }
       throw error;
     }
   }

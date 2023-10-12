@@ -29,13 +29,25 @@ export class LicenseRepository {
     return await this.licenseModel.find(query);
   }
 
+  async findWithLimit(query: any, limit?: number) {
+    return await this.licenseModel.find(query).limit(limit);
+  }
+
   async findOneAndUpdate(query: any, update: any) {
     return await this.licenseModel.findOneAndUpdate(query, update, {
+      runValidators: true,
       new: true,
     });
   }
 
   async findByIdAndUpdate(id: string, update: any) {
-    return await this.licenseModel.findByIdAndUpdate(id, update, { new: true });
+    return await this.licenseModel.findByIdAndUpdate(id, update, {
+      runValidators: true,
+      new: true,
+    });
+  }
+
+  async updateMany(query: any, data: any) {
+    return this.licenseModel.updateMany(query, data, { new: true });
   }
 }

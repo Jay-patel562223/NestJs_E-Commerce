@@ -16,7 +16,7 @@ export class UserRepository {
   async findById(id: string) {
     return await this.userModel.findById(id);
   }
-  
+
   async find(query: any) {
     return await this.userModel.find(query);
   }
@@ -26,6 +26,9 @@ export class UserRepository {
   }
 
   async findOneAndUpdate(query: any, data: Record<string, any>) {
-    return await this.userModel.findOneAndUpdate(query, data, { new: true });
+    return await this.userModel.findOneAndUpdate(query, data, {
+      runValidators: true,
+      new: true,
+    });
   }
 }

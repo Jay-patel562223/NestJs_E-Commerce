@@ -19,8 +19,15 @@ export class ProductRepository {
     return await this.productModel.findById(id);
   }
 
+  async findOne(query: any) {
+    return await this.productModel.findOne(query);
+  }
+
   async findByIdAndUpdate(id: string, update: any) {
-    return await this.productModel.findByIdAndUpdate(id, update, { new: true });
+    return await this.productModel.findByIdAndUpdate(id, update, {
+      runValidators: true,
+      new: true,
+    });
   }
 
   async findByIdAndDelete(id: string) {

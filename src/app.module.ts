@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { ProductsModule } from './products/products.module';
 import { StripeModule } from './stripe/stripe.module';
 import { LicenseModule } from './license/license.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { LicenseModule } from './license/license.module';
       apiVersion: '2023-08-16',
     }),
     LicenseModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [

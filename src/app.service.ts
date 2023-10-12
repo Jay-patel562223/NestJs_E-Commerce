@@ -6,6 +6,22 @@ export class AppService {
     return 'Hello World!';
   }
 
+  orderSuccess(){
+    return {
+      suceess: true,
+      message: 'Order Success',
+      result: null
+    }
+  }
+
+  orderCancel(){
+    return {
+      suceess: false,
+      message: 'Order Cancel',
+      result: null
+    }
+  }
+
   getTest(): any {
     return {
       message: "Test API",

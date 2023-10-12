@@ -263,6 +263,7 @@ export class ProductsService {
             metadata: {
               skuCode: skuCode,
               lifetime: data.lifetime + '',
+              validity: data.validity,
               productId: productId,
               price: data.price,
               productName: product.productName,
@@ -283,6 +284,9 @@ export class ProductsService {
         result: skuDetails,
       };
     } catch (error) {
+      if (error.name === 'ValidationError') {
+        throw new BadRequestException(error);
+      }
       throw error;
     }
   }
@@ -315,6 +319,7 @@ export class ProductsService {
           metadata: {
             skuCode: sku.skuCode,
             lifetime: updateProductSkuDto.lifetime + '',
+            validity: updateProductSkuDto.validity,
             productId: productId,
             price: updateProductSkuDto.price,
             productName: product.productName,
@@ -346,6 +351,9 @@ export class ProductsService {
         result: updatedSkuDetails,
       };
     } catch (error) {
+      if (error.name === 'ValidationError') {
+        throw new BadRequestException(error);
+      }
       throw error;
     }
   }
