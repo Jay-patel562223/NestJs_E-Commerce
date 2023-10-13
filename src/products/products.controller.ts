@@ -10,6 +10,7 @@ import {
   UseInterceptors,
   UploadedFile,
   Put,
+  Req,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -72,7 +73,10 @@ export class ProductsController {
     @Param('productId') productId: string,
     @Body() productSkuDto: ProductSkuDtoArr,
   ) {
-    return await this.productsService.createProductSku(productId, productSkuDto)
+    return await this.productsService.createProductSku(
+      productId,
+      productSkuDto,
+    );
   }
 
   @Put('/:productId/skus/:skuId')
@@ -80,9 +84,37 @@ export class ProductsController {
   async updateProductSkuDetails(
     @Param('productId') productId: string,
     @Param('skuId') skuId: string,
-    @Body() updateProductSkuDto: ProductSkuDto 
-  ){
-    return await this.productsService.updateProductSkuDetails(productId, skuId, updateProductSkuDto)
+    @Body() updateProductSkuDto: ProductSkuDto,
+  ) {
+    return await this.productsService.updateProductSkuDetails(
+      productId,
+      skuId,
+      updateProductSkuDto,
+    );
+  }
+
+  @Post('/:productId/reviews')
+  @Roles(userTypes.CUSTOMER)
+  async addProductReview(
+    @Param('productId') productId: string,
+    @Body('rating') rating: number,
+    @Body('review') review: string,
+    @Req() req: any,
+  ) {
+    return await this.productsService.addProductReview(
+      productId,
+      rating,
+      review,
+      req.user,
+    );
+  }
+
+  @Delete('/:productId/reviews/:reviewId')
+  async deleteProductReview(
+    @Param('productId') productId: string,
+    @Param('reviewId') reviewId: string,
+  ) {
+    return await this.productsService.deleteProductReview(productId, reviewId);
   }
 
   @Delete(':id')

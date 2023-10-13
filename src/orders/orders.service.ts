@@ -10,7 +10,7 @@ import { userTypes } from 'src/shared/schema/users';
 import { Orders, orderStatus, paymentStatus } from 'src/shared/schema/orders';
 
 interface Data{
-  lifetime: string,
+  lifetime: boolean,
   price: number,
   productId: string,
   productImage: string,
@@ -207,7 +207,7 @@ export class OrdersService {
         checkoutSessionId: session.id,
         orderedItems: lineItems.data.map((item) => {
           const data: Data = {
-            lifetime: item.price.metadata.lifetime,
+            lifetime: String(item.price.metadata.lifetime).toLowerCase() === "true",
             price: Number(item.price.metadata.price),
             productId: item.price.metadata.productId,
             productImage:item.price.metadata.productImage,

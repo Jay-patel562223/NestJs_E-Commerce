@@ -14,6 +14,8 @@ import { ProductRepository } from 'src/shared/repositories/product.repository';
 import { UserRepository } from 'src/shared/repositories/user.repository';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from 'src/shared/middleware/roles.guard';
+import { OrderSchema, Orders } from 'src/shared/schema/orders';
+import { OrderRepository } from 'src/shared/repositories/order.repository';
 
 @Module({
   controllers: [ProductsController],
@@ -21,6 +23,7 @@ import { RolesGuard } from 'src/shared/middleware/roles.guard';
     ProductsService,
     ProductRepository,
     UserRepository,
+    OrderRepository,
     { provide: APP_GUARD, useClass: RolesGuard },
   ],
   imports: [
@@ -32,6 +35,10 @@ import { RolesGuard } from 'src/shared/middleware/roles.guard';
       {
         name: Users.name,
         schema: UserSchema,
+      },
+      {
+        name: Orders.name,
+        schema: OrderSchema,
       },
     ]),
   ],

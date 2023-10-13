@@ -4,17 +4,19 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { ProductRepository } from 'src/shared/repositories/product.repository';
 import { STRIPE_CLIENT } from 'src/stripe/constants';
 import Stripe from 'stripe';
-import { Products } from 'src/shared/schema/products';
+import { Feedbackers, Products } from 'src/shared/schema/products';
 import { GetProductQueryDto } from './dto/get-product-query.dto';
 import qs2m from 'qs-to-mongo';
 import cloudinary from 'cloudinary';
 import { unlinkSync } from 'fs';
 import { ProductSkuDto, ProductSkuDtoArr } from './dto/product-sku.dto';
+import { OrderRepository } from 'src/shared/repositories/order.repository';
 
 @Injectable()
 export class ProductsService {
   constructor(
     @Inject(ProductRepository) private readonly productDB: ProductRepository,
+    @Inject(OrderRepository) private readonly orderDB: OrderRepository,
     @Inject(STRIPE_CLIENT) private readonly stripeClient: Stripe,
   ) {
     cloudinary.v2.config({
@@ -332,10 +334,10 @@ export class ProductsService {
         });
       }
 
-      const dataForUpdate = {}
-      for (const key in updateProductSkuDto){
-        if(updateProductSkuDto.hasOwnProperty(key)){
-          dataForUpdate[`skuDetails.$.${key}`] = updateProductSkuDto[key]
+      const dataForUpdate = {};
+      for (const key in updateProductSkuDto) {
+        if (updateProductSkuDto.hasOwnProperty(key)) {
+          dataForUpdate[`skuDetails.$.${key}`] = updateProductSkuDto[key];
         }
       }
       const updatedSkuDetails = await this.productDB.findOneAndUpdate(
@@ -354,6 +356,123 @@ export class ProductsService {
       if (error.name === 'ValidationError') {
         throw new BadRequestException(error);
       }
+      throw error;
+    }
+  }
+
+  async addProductReview(
+    productId: string,
+    rating: number,
+    review: string,
+    user: Record<string, any>,
+  ): Promise<{
+    message: string;
+    success: boolean;
+    result: Products;
+  }> {
+    try {
+      const product = await this.productDB.findById(productId);
+      if (!product) {
+        throw new Error('Product does not exist');
+      }
+      // if (
+      //   product.feedbackDetails.find(
+      //     (value: { customerId: string }) =>
+      //       value.customerId === user._id.toString(),
+      //   )
+      // ) {
+      //   throw new BadRequestException(
+      //     'You have already gave the review for this product',
+      //   );
+      // }
+
+      const order = await this.orderDB.findOne({
+        user: user._id,
+        'orderedItems.productId': productId,
+      });
+      if (!order) {
+        throw new BadRequestException('You have not purchased this product');
+      }
+      
+      const ratings: any[] = [rating];
+      product.feedbackDetails.forEach((comment: { rating: any }) =>
+        ratings.push(comment.rating),
+      );
+
+      let avgRating = String(rating);
+      if (ratings.length > 0) {
+        avgRating = (ratings.reduce((a, b) => a + b) / ratings.length).toFixed(
+          1,
+        );
+      }
+
+      const reviewDetails = {
+        customerId: user._id,
+        customerName: user.name,
+        rating: rating,
+        feedbackMsg: review,
+      };
+
+      const feedback = await this.productDB.findByIdAndUpdate(productId, {
+        $set: { avgRating },
+        $push: { feedbackDetails: reviewDetails },
+      });
+      return {
+        message: 'Product review added successfully',
+        success: true,
+        result: feedback,
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async deleteProductReview(
+    productId: string,
+    reviewId: string,
+  ): Promise<{
+    message: string;
+    success: boolean;
+    result: Products;
+  }> {
+    try {
+      const product = await this.productDB.findById(productId);
+      if (!product) {
+        throw new Error('Product does not exist');
+      }
+
+      const review = product.feedbackDetails.find(
+        (review) => review._id == reviewId,
+      );
+      if (!review) {
+        throw new Error('Review does not exist');
+      }
+
+      const ratings: any[] = [];
+      product.feedbackDetails.forEach((comment) => {
+        if (comment._id.toString() !== reviewId) {
+          ratings.push(comment.rating);
+        }
+      });
+
+      let avgRating = '0';
+      if (ratings.length > 0) {
+        avgRating = (ratings.reduce((a, b) => a + b) / ratings.length).toFixed(
+          1,
+        );
+      }
+
+      const feedback = await this.productDB.findByIdAndUpdate(productId, {
+        $set: { avgRating },
+        $pull: { feedbackDetails: { _id: reviewId } },
+      });
+
+      return {
+        message: 'Product review updated successfully',
+        success: true,
+        result: feedback,
+      };
+    } catch (error) {
       throw error;
     }
   }
