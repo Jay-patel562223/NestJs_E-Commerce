@@ -89,7 +89,8 @@ export class ProductsService {
             pages: options.limit
               ? Math.ceil(totalProductCount / options.limit)
               : 1,
-            links: links('/', totalProductCount),
+            current_page: Math.ceil(options.skip / options.limit) + 1,
+            links: links(`${process.env.API_URL}/products/`, totalProductCount),
           },
           products,
         },
@@ -375,16 +376,16 @@ export class ProductsService {
       if (!product) {
         throw new Error('Product does not exist');
       }
-      // if (
-      //   product.feedbackDetails.find(
-      //     (value: { customerId: string }) =>
-      //       value.customerId === user._id.toString(),
-      //   )
-      // ) {
-      //   throw new BadRequestException(
-      //     'You have already gave the review for this product',
-      //   );
-      // }
+      if (
+        product.feedbackDetails.find(
+          (value: { customerId: string }) =>
+            value.customerId === user._id.toString(),
+        )
+      ) {
+        throw new BadRequestException(
+          'You have already gave the review for this product',
+        );
+      }
 
       const order = await this.orderDB.findOne({
         user: user._id,
