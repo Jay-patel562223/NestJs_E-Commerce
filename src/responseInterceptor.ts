@@ -13,7 +13,7 @@ export interface Response<T> {
 export class TransformationInterceptor<T> implements NestInterceptor<T, Response<T>> {
     intercept(context: ExecutionContext, next: CallHandler): Observable<Response<T>> {
         const statusCode = context.switchToHttp().getResponse().statusCode;
-        const path = context.switchToHttp().getResponse().url;
+        const path = context?.switchToHttp()?.getResponse()?.req?.url;
         return next.handle().pipe(
             map((data) => ({
                 message: data?.message,

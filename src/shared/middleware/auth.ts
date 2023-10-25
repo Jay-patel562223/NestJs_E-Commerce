@@ -33,23 +33,3 @@ export class AuthMiddleware implements NestMiddleware {
     }
   }
 }
-
-export class Auth implements NestMiddleware {
-  async use(req: Request | any, res: Response, next: NextFunction) {
-    try {
-      const token = req.cookies._digi_auth_token;
-      if (!token) {
-        throw new UnauthorizedException('Missing auth token123');
-      }
-      const decodedData: any = decodeAuthToken(token);
-      const user = decodedData.id;
-      if (!user) {
-        throw new UnauthorizedException('Unauthorized123');
-      }
-      req.user = user;
-      next();
-    } catch (error) {
-      throw new UnauthorizedException(error.message);
-    }
-  }
-}
