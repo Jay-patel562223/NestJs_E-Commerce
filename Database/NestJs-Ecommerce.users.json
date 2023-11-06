@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "name": "test",
+  "email": "jaypatel.qs@gmail.com",
+  "password": "$2b$10$6AZhOQaIpJIjIivyruOASObU0AVoU9DTOkQTELfW982TgNJsq5eIC",
+  "type": "customer",
+  "isVerified": true,
+  "otp": "",
+  "otpExpiryTime": null,
+  "createdAt": {
+    "$date": "2023-10-04T11:10:57.373Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-04T13:17:07.669Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651e9cef8c9ecab1323dc4cf"
+  },
+  "name": "Admin",
+  "email": "admin@gmail.com",
+  "password": "$2b$10$HF4lcWmt9scpOWCK7ZpCC.ZnGYLoWHaRpF6pCK9zWF3axRX94XE0W",
+  "type": "admin",
+  "isVerified": true,
+  "otp": "$2b$10$RiAb2i/GvfA5isS8tydwPOfXp7c3vhkKslBM.qxvVNCzQVrAHScGG",
+  "otpExpiryTime": {
+    "$date": "2023-10-05T11:34:31.690Z"
+  },
+  "createdAt": {
+    "$date": "2023-10-05T11:24:31.695Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-05T11:24:31.695Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6530c7f70f72d0773ca54898"
+  },
+  "name": "jay",
+  "email": "jay@gmail.com",
+  "password": "$2b$10$eSZpPIn74xKk2Dx/Y5Z9uuvPSVC5KiW8XZcDsKxN54Z6wMuREt34i",
+  "type": "customer",
+  "isVerified": false,
+  "otp": "$2b$10$nE0DiVX7QJmpzCmXCdodVuT/rjP0YFpHsouSVt/JKZ3o6FzCguFfq",
+  "otpExpiryTime": {
+    "$date": "2023-10-19T06:18:55.949Z"
+  },
+  "createdAt": {
+    "$date": "2023-10-19T06:08:55.956Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-19T06:08:55.956Z"
+  },
+  "__v": 0
+}]

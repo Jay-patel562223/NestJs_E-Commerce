@@ -1,0 +1,323 @@
+[{
+  "_id": {
+    "$oid": "6527e5a36cadf6d1bc4d8bec"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be0",
+  "licenseKey": "3652-6589-8547-1254",
+  "isSold": true,
+  "orderId": "788476768361",
+  "createdAt": {
+    "$date": "2023-10-12T12:25:07.652Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-12T13:24:09.327Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e5c26cadf6d1bc4d8bf3"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be0",
+  "licenseKey": "32145-78965-76435-76895",
+  "isSold": true,
+  "orderId": "788476768361",
+  "createdAt": {
+    "$date": "2023-10-12T12:25:38.224Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-12T13:24:09.327Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e5e66cadf6d1bc4d8bfa"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be1",
+  "licenseKey": "35412-69587-36520-32014",
+  "isSold": true,
+  "orderId": "330193554605",
+  "createdAt": {
+    "$date": "2023-10-12T12:26:14.296Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:36:17.579Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e5fa6cadf6d1bc4d8c01"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be1",
+  "licenseKey": "36254-21034-65021-46305",
+  "isSold": true,
+  "orderId": "330193554605",
+  "createdAt": {
+    "$date": "2023-10-12T12:26:34.349Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:36:17.579Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e6086cadf6d1bc4d8c08"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be1",
+  "licenseKey": "68953-20134-00024-32015",
+  "isSold": true,
+  "orderId": "163633989423",
+  "createdAt": {
+    "$date": "2023-10-12T12:26:48.417Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:43:46.030Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e6336cadf6d1bc4d8c0f"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be2",
+  "licenseKey": "35620-46821-68531-35689",
+  "isSold": true,
+  "orderId": "330193554605",
+  "createdAt": {
+    "$date": "2023-10-12T12:27:31.962Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:36:17.583Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e6446cadf6d1bc4d8c16"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be0",
+  "licenseKey": "35620-46821-68531-35689",
+  "isSold": true,
+  "orderId": "788476768361",
+  "createdAt": {
+    "$date": "2023-10-12T12:27:48.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-12T13:24:09.327Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e66c6cadf6d1bc4d8c1d"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be0",
+  "licenseKey": "31240-46520-35620-35684",
+  "isSold": true,
+  "orderId": "744198944603",
+  "createdAt": {
+    "$date": "2023-10-12T12:28:28.405Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:03:06.865Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e67b6cadf6d1bc4d8c24"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be0",
+  "licenseKey": "01326-13204-65204-65201",
+  "isSold": true,
+  "orderId": "330193554605",
+  "createdAt": {
+    "$date": "2023-10-12T12:28:43.626Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:36:17.573Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6527e69a6cadf6d1bc4d8c2b"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be0",
+  "licenseKey": "64310-46895-64320-68954",
+  "isSold": true,
+  "orderId": "163633989423",
+  "createdAt": {
+    "$date": "2023-10-12T12:29:14.844Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:43:46.022Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528d89f1e3a59db7484cd32"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be1",
+  "licenseKey": "64310-46895-64320-68954",
+  "isSold": true,
+  "orderId": "163633989423",
+  "createdAt": {
+    "$date": "2023-10-13T05:41:51.135Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:43:46.030Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528d8ac1e3a59db7484cd39"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be1",
+  "licenseKey": "65236-98567-98521-98564",
+  "isSold": true,
+  "orderId": "202261400602",
+  "createdAt": {
+    "$date": "2023-10-13T05:42:04.524Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:56:42.377Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528d8d91e3a59db7484cd40"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be2",
+  "licenseKey": "32014-65200-62351-00001",
+  "isSold": true,
+  "orderId": "163633989423",
+  "createdAt": {
+    "$date": "2023-10-13T05:42:49.917Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:43:46.034Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528db3094a79ed6591301ce"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be2",
+  "licenseKey": "32014-65200-62351-00001",
+  "isSold": true,
+  "orderId": "403787690926",
+  "createdAt": {
+    "$date": "2023-10-13T05:52:48.067Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:54:05.251Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528dba894a79ed6591301e3"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be2",
+  "licenseKey": "32014-65200-62351-00001",
+  "isSold": true,
+  "orderId": "202261400602",
+  "createdAt": {
+    "$date": "2023-10-13T05:54:48.018Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:56:42.383Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528dbc294a79ed6591301ea"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be0",
+  "licenseKey": "98541-45236-62351-32165",
+  "isSold": true,
+  "orderId": "202261400602",
+  "createdAt": {
+    "$date": "2023-10-13T05:55:14.445Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:56:42.373Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528dbdb94a79ed6591301f1"
+  },
+  "product": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productSku": "6527e55e6cadf6d1bc4d8be1",
+  "licenseKey": "78945-10236-00215-13002",
+  "isSold": true,
+  "orderId": "202261400602",
+  "createdAt": {
+    "$date": "2023-10-13T05:55:39.711Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:56:42.377Z"
+  },
+  "__v": 0
+}]

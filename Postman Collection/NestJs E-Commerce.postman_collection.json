@@ -1,0 +1,1017 @@
+{
+	"info": {
+		"_postman_id": "3d1f040f-5cef-4ce9-a373-2207b6681e22",
+		"name": "NestJs E-Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27181618"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Forgot Password",
+							"item": [
+								{
+									"name": "Forgot password send OTP in email",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localurl}}/users/forgot-password-email/jaypatel.qs@gmail.com",
+											"host": [
+												"{{localurl}}"
+											],
+											"path": [
+												"users",
+												"forgot-password-email",
+												"jaypatel.qs@gmail.com"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Verify Email & OTP",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localurl}}/users/verify-email/jaypatel.qs@gmail.com/969336",
+											"host": [
+												"{{localurl}}"
+											],
+											"path": [
+												"users",
+												"verify-email",
+												"jaypatel.qs@gmail.com",
+												"969336"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Resend OTP",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"isForgotPassword\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localurl}}/users/send-otp-email/jaypatel.qs@gmail.com",
+											"host": [
+												"{{localurl}}"
+											],
+											"path": [
+												"users",
+												"send-otp-email",
+												"jaypatel.qs@gmail.com"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Forgot password",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"newPassword\": \"test123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localurl}}/users/forgot-password/jaypatel.qs@gmail.com",
+											"host": [
+												"{{localurl}}"
+											],
+											"path": [
+												"users",
+												"forgot-password",
+												"jaypatel.qs@gmail.com"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"jay\",\r\n    \"email\": \"jay@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"type\": \"customer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/users",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"jaypatel.qs@gmail.com\",\r\n    \"password\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/users/login",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify Email & OTP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/users/verify-email/jaypatel.qs@gmail.com/872375",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"users",
+										"verify-email",
+										"jaypatel.qs@gmail.com",
+										"872375"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resend OTP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/users/send-otp-email/jaypatel.qs@gmail.com",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"users",
+										"send-otp-email",
+										"jaypatel.qs@gmail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/users/logout",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"users",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Get Products by filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/products?baseType=mobile",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "homepage",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "baseType",
+											"value": "mobile"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products for Home Page",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/products?homepage=true",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "homepage",
+											"value": "true"
+										},
+										{
+											"key": "baseType",
+											"value": "mobile",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Product by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652156564d35fce16f46f577",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652156564d35fce16f46f577"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Checkout Order (Stripe)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"checkoutDetails\": [\r\n        {\r\n            \"skupriceId\": \"price_1O0NxCSFddZIvuzjbRelMGCf\",\r\n            \"quantity\": 1,\r\n            \"skuId\": \"6527e55e6cadf6d1bc4d8be0\"\r\n        },\r\n        {\r\n            \"skupriceId\": \"price_1O0NxCSFddZIvuzj8wOV9Tmj\",\r\n            \"quantity\": 2,\r\n            \"skuId\": \"6527e55e6cadf6d1bc4d8be1\"\r\n        },\r\n        {\r\n            \"skupriceId\": \"price_1O0NxDSFddZIvuzjXidIF09F\",\r\n            \"quantity\": 1,\r\n            \"skuId\": \"6527e55e6cadf6d1bc4d8be2\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/orders/checkout",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"orders",
+										"checkout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all orders by user or status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/orders",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "completed",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get order by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/orders/6527f379546fa6f2c7e10d0e",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"orders",
+										"6527f379546fa6f2c7e10d0e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "Add a product review",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"review\": \"Nice\",\r\n    \"rating\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652155d54d35fce16f46f56b/reviews",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652155d54d35fce16f46f56b",
+										"reviews"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "completed",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete product review",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"review\": \"Nice\",\r\n    \"rating\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652155d54d35fce16f46f56b/reviews/652942b955370e22656fe859",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652155d54d35fce16f46f56b",
+										"reviews",
+										"652942b955370e22656fe859"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "completed",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "User Management",
+					"item": [
+						{
+							"name": "Get all users by type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/users?type=customer",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "customer"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product Management",
+					"item": [
+						{
+							"name": "Create Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Test Product 10\",\r\n    \"description\": \"This is the test description 10\",\r\n    \"category\": \"application software\",\r\n    \"platformType\": \"windows\",\r\n    \"baseType\": \"computer\",\r\n    \"avgRating\": 3.5,\r\n    \"productUrl\": \"https://demourl.com\",\r\n    \"downloadUrl\": \"https://download.com\",\r\n    \"requirementSpecification\": [\r\n        {\r\n            \"RAM\": \"1GB\",\r\n            \"Processor\": \"above i3\",\r\n            \"Storage\": \"15GB\"\r\n        }\r\n    ],\r\n    \"highlights\": [\r\n        \"Test highlight 1\",\r\n        \"Test highlight 2\",\r\n        \"Test highlight 3\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/products",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload Product image by id Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productImage",
+											"type": "file",
+											"src": "/C:/Users/JAY/Downloads/pexels-zhang-kaiyv-1138369.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652155d54d35fce16f46f56b/image",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652155d54d35fce16f46f56b",
+										"image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add One/Multiple SKU Details by product id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skuDetails\": [\r\n        {\r\n            \"skuName\": \"silver\",\r\n            \"price\": 500,\r\n            \"validity\": 365,\r\n            \"lifetime\": false\r\n        },\r\n        {\r\n            \"skuName\": \"Gold\",\r\n            \"price\": 1200,\r\n            \"validity\": 900,\r\n            \"lifetime\": false\r\n        },\r\n        {\r\n            \"skuName\": \"Diamond\",\r\n            \"price\": 5000,\r\n            \"validity\": 1234567,\r\n            \"lifetime\": true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652155d54d35fce16f46f56b/skus",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652155d54d35fce16f46f56b",
+										"skus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update SKU Details by product id and SKU id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skuName\": \"Gold\",\r\n    \"price\": 2000,\r\n    \"validity\": 1800,\r\n    \"lifetime\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652155a44d35fce16f46f568/skus/65254188ee25f72b18a0dbab",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652155a44d35fce16f46f568",
+										"skus",
+										"65254188ee25f72b18a0dbab"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\":\"Test Product - updated\",\r\n    \"description\": \"This is the test description - updated\",\r\n    \"category\":\"application software\",\r\n    \"platformType\": \"windows\",\r\n    \"baseType\": \"computer\",\r\n    \"productUrl\": \"https://demourl.com\",\r\n    \"downloadUrl\": \"https://download.com\",\r\n    \"requirementSpecification\": [{\"RAM\": \"4GB\", \"Processor\": \"above i5\", \"Storage\": \"64GB\" }],\r\n    \"highlights\": [\"Test highlight 1\", \"Test highlight 2\", \"Test highlight 3\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652007164386d3ea728f967d",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652007164386d3ea728f967d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products by filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/products?limit=3",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "homepage",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "baseType",
+											"value": "mobile",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "3"
+										},
+										{
+											"key": "offset",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products for Home Page",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/products?homepage=true",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "homepage",
+											"value": "true"
+										},
+										{
+											"key": "baseType",
+											"value": "mobile",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Product by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652155a44d35fce16f46f568",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652155a44d35fce16f46f568"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localurl}}/api/v1/products/652155a44d35fce16f46f568",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"652155a44d35fce16f46f568"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "License Management",
+					"item": [
+						{
+							"name": "Create license for product and SKU",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"licenseKey\": \"78945-10236-00215-13002\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/license/product/652155d54d35fce16f46f56b/skus/6527e55e6cadf6d1bc4d8be1",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"license",
+										"product",
+										"652155d54d35fce16f46f56b",
+										"skus",
+										"6527e55e6cadf6d1bc4d8be1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update license for product and SKU",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"licenseKey\": \"95843-87536-98547-00001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/license/6526500f7e1ea11e5d482484/product/652155a44d35fce16f46f568/skus/65254188ee25f72b18a0dbac",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"license",
+										"6526500f7e1ea11e5d482484",
+										"product",
+										"652155a44d35fce16f46f568",
+										"skus",
+										"65254188ee25f72b18a0dbac"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all licenses for product and SKU",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"licenseKey\": \"95843-87536-98547-00001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/license/product/652155a44d35fce16f46f568/skus/65254188ee25f72b18a0dbac",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"license",
+										"product",
+										"652155a44d35fce16f46f568",
+										"skus",
+										"65254188ee25f72b18a0dbac"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get license By id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"licenseKey\": \"95843-87536-98547-00001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/license/6526500f7e1ea11e5d482484",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"license",
+										"6526500f7e1ea11e5d482484"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete license for product and SKU",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"licenseKey\": \"95843-87536-98547-00001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localurl}}/api/v1/license/6526534a01a4ee7174416c20",
+									"host": [
+										"{{localurl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"license",
+										"6526534a01a4ee7174416c20"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localurl}}/api/v1/users/login",
+							"host": [
+								"{{localurl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout Admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localurl}}/api/v1/users/logout",
+							"host": [
+								"{{localurl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

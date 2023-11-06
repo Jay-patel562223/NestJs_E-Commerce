@@ -1,0 +1,469 @@
+[{
+  "_id": {
+    "$oid": "652155d54d35fce16f46f56b"
+  },
+  "productName": "Test Product 2",
+  "description": "This is the test description 2",
+  "image": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+  "category": "operating system",
+  "platformType": "mac",
+  "baseType": "computer",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_Om8N1yZghRhrvj",
+  "feedbackDetails": [
+    {
+      "customerId": "651d48412b27cb9c4a21467c",
+      "customerName": "test",
+      "rating": 1,
+      "feedbackMsg": "Nice",
+      "_id": {
+        "$oid": "6529424b08687f36ffc10ed8"
+      },
+      "createdAt": {
+        "$date": "2023-10-13T13:12:43.156Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-13T13:12:43.156Z"
+      }
+    },
+    {
+      "customerId": "651d48412b27cb9c4a21467c",
+      "customerName": "test",
+      "rating": 3,
+      "feedbackMsg": "Nice",
+      "_id": {
+        "$oid": "6529427c3fadd960482de59f"
+      },
+      "createdAt": {
+        "$date": "2023-10-13T13:13:32.531Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-13T13:13:32.531Z"
+      }
+    },
+    {
+      "customerId": "651d48412b27cb9c4a21467c",
+      "customerName": "test",
+      "rating": 3,
+      "feedbackMsg": "Nice",
+      "_id": {
+        "$oid": "6529429f61ab3a1f41c2861e"
+      },
+      "createdAt": {
+        "$date": "2023-10-13T13:14:07.763Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-13T13:14:07.763Z"
+      }
+    },
+    {
+      "customerId": "651d48412b27cb9c4a21467c",
+      "customerName": "test",
+      "rating": 4,
+      "feedbackMsg": "Nice",
+      "_id": {
+        "$oid": "6529435bb0840b8a6be61895"
+      },
+      "createdAt": {
+        "$date": "2023-10-13T13:17:15.281Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-13T13:17:15.281Z"
+      }
+    },
+    {
+      "customerId": "651d48412b27cb9c4a21467c",
+      "customerName": "test",
+      "rating": 2,
+      "feedbackMsg": "Nice",
+      "_id": {
+        "$oid": "6529439d3c7236460e2f9033"
+      },
+      "createdAt": {
+        "$date": "2023-10-13T13:18:21.506Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-13T13:18:21.506Z"
+      }
+    },
+    {
+      "customerId": "651d48412b27cb9c4a21467c",
+      "customerName": "test",
+      "rating": 1,
+      "feedbackMsg": "Nice",
+      "_id": {
+        "$oid": "652943b53c7236460e2f904a"
+      },
+      "createdAt": {
+        "$date": "2023-10-13T13:18:45.031Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-13T13:18:45.031Z"
+      }
+    }
+  ],
+  "skuDetails": [
+    {
+      "skuName": "silver",
+      "price": 500,
+      "validity": 365,
+      "lifetime": false,
+      "stripePriceId": "price_1O0NxCSFddZIvuzjbRelMGCf",
+      "skuCode": "29b1697113437703",
+      "_id": {
+        "$oid": "6527e55e6cadf6d1bc4d8be0"
+      }
+    },
+    {
+      "skuName": "Gold",
+      "price": 1200,
+      "validity": 900,
+      "lifetime": false,
+      "stripePriceId": "price_1O0NxCSFddZIvuzj8wOV9Tmj",
+      "skuCode": "5f11697113438154",
+      "_id": {
+        "$oid": "6527e55e6cadf6d1bc4d8be1"
+      }
+    },
+    {
+      "skuName": "Diamond",
+      "price": 5000,
+      "validity": 1234567,
+      "lifetime": true,
+      "stripePriceId": "price_1O0NxDSFddZIvuzjXidIF09F",
+      "skuCode": "vl01697113438438",
+      "_id": {
+        "$oid": "6527e55e6cadf6d1bc4d8be2"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-10-07T12:57:57.910Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T13:19:58.015Z"
+  },
+  "__v": 0,
+  "imageDetails": {
+    "asset_id": "864b8cf3975cab3b327198b6e54fddcb",
+    "public_id": "digizone/products/digi_prods_1696849779197",
+    "version": 1696849867,
+    "version_id": "28075ee6f3d2c35ee1874da237837283",
+    "signature": "0ccc2ff0846fb9cc8b30b1b35fd54f20c84326e0",
+    "width": 400,
+    "height": 400,
+    "format": "jpg",
+    "resource_type": "image",
+    "created_at": "2023-10-09T11:11:07Z",
+    "tags": [],
+    "bytes": 11008,
+    "type": "upload",
+    "etag": "76de056ff1ac949db9b3f09750a3a83c",
+    "placeholder": false,
+    "url": "http://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+    "secure_url": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+    "folder": "digizone/products",
+    "original_filename": "1b3de299c92b622a8d7edc0cea824310",
+    "api_key": "445232882638695"
+  },
+  "avgRating": 2.3
+},
+{
+  "_id": {
+    "$oid": "652155e84d35fce16f46f56e"
+  },
+  "productName": "Test Product 3",
+  "description": "This is the test description 3",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "operating system",
+  "platformType": "linux",
+  "baseType": "computer",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_Om8NtlfdhnMv6o",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-07T12:58:16.822Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-07T12:58:16.822Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652156074d35fce16f46f571"
+  },
+  "productName": "Test Product 4",
+  "description": "This is the test description 4",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "application software",
+  "platformType": "ios",
+  "baseType": "mobile",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_Om8NyCd06TCLNk",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-07T12:58:47.204Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-07T12:58:47.204Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652156304d35fce16f46f574"
+  },
+  "productName": "Test Product 5",
+  "description": "This is the test description 5",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "application software",
+  "platformType": "android",
+  "baseType": "mobile",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "avgRating": 4,
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_Om8Onf8VIwgO9f",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-07T12:59:28.943Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-07T12:59:28.943Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652156564d35fce16f46f577"
+  },
+  "productName": "Test Product 6",
+  "description": "This is the test description 6",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "operating system",
+  "platformType": "mac",
+  "baseType": "computer",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "avgRating": 3.5,
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_Om8PQ1RhiYzY5U",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-07T13:00:06.073Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-07T13:00:06.073Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523db09d59031f85c4d4533"
+  },
+  "productName": "Test Product 7",
+  "description": "This is the test description 7",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "application software",
+  "platformType": "windows",
+  "baseType": "computer",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "avgRating": 3.5,
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_Omql1n44lqooWy",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-09T10:50:49.867Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T10:50:49.867Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523db10d59031f85c4d4536"
+  },
+  "productName": "Test Product 8",
+  "description": "This is the test description 8",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "application software",
+  "platformType": "windows",
+  "baseType": "computer",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "avgRating": 3.5,
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_OmqmUE3m6kr9a5",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-09T10:50:56.180Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T10:50:56.180Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523db18d59031f85c4d4539"
+  },
+  "productName": "Test Product 9",
+  "description": "This is the test description 9",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "application software",
+  "platformType": "windows",
+  "baseType": "computer",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "avgRating": 3.5,
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_OmqmDAc9DS76FQ",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-09T10:51:04.386Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T10:51:04.386Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523db21d59031f85c4d453c"
+  },
+  "productName": "Test Product 10",
+  "description": "This is the test description 10",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+  "category": "application software",
+  "platformType": "windows",
+  "baseType": "computer",
+  "productUrl": "https://demourl.com",
+  "downloadUrl": "https://download.com",
+  "avgRating": 3.5,
+  "requirementSpecification": [
+    {
+      "RAM": "1GB",
+      "Processor": "above i3",
+      "Storage": "15GB"
+    }
+  ],
+  "highlights": [
+    "Test highlight 1",
+    "Test highlight 2",
+    "Test highlight 3"
+  ],
+  "stripeProductId": "prod_Omqmb9huE6afB8",
+  "feedbackDetails": [],
+  "skuDetails": [],
+  "createdAt": {
+    "$date": "2023-10-09T10:51:13.214Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T10:51:13.214Z"
+  },
+  "__v": 0
+}]

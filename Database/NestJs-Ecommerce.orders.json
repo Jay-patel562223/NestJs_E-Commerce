@@ -1,0 +1,472 @@
+[{
+  "_id": {
+    "$oid": "6527f379546fa6f2c7e10d0e"
+  },
+  "orderId": "788476768361",
+  "user": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "customerAddress": {
+    "city": "Ahmedabad",
+    "country": "IN",
+    "line1": "1001/1002 Isquare",
+    "line2": "Isquare Corporate Park",
+    "postal_code": "380059",
+    "state": "GJ"
+  },
+  "customerPhoneNumber": "+917896541230",
+  "customerEmail": "jaypatel.qs@gmail.com",
+  "orderedItems": [
+    {
+      "lifetime": "false",
+      "price": 500,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "29b1697113437703",
+      "validity": 365,
+      "quantity": 3,
+      "skuPriceId": "price_1O0NxCSFddZIvuzjbRelMGCf",
+      "licenseKeys": [
+        "3652-6589-8547-1254",
+        "32145-78965-76435-76895",
+        "35620-46821-68531-35689"
+      ]
+    }
+  ],
+  "totalAmount": 1500,
+  "paymentInfo": {
+    "paymentMethod": "card",
+    "paymentIntentId": "pi_3O0OtMSFddZIvuzj0fkYC2nR",
+    "paymentDate": {
+      "$date": "2023-10-12T13:24:09.309Z"
+    },
+    "paymentAmount": 1500,
+    "paymentStatus": "paid"
+  },
+  "orderStatus": "completed",
+  "isOrderDelivered": true,
+  "checkoutSessionId": "cs_test_a1H3hUURRilpZmXey4EB2aInWuTm89lV9rYwljgp2C4SVtGV5ZjIXVNxiV",
+  "createdAt": {
+    "$date": "2023-10-12T13:24:09.316Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-12T13:24:09.331Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528cf8a5b273826c478efcb"
+  },
+  "orderId": "744198944603",
+  "user": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "customerAddress": {
+    "city": "Ahmedabad",
+    "country": "IN",
+    "line1": "1001/1002 Isquare",
+    "line2": "Isquare Corporate Park",
+    "postal_code": "380059",
+    "state": "GJ"
+  },
+  "customerPhoneNumber": "+916598452014",
+  "customerEmail": "jaypatel.qs@gmail.com",
+  "orderedItems": [
+    {
+      "lifetime": "false",
+      "price": 500,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "29b1697113437703",
+      "validity": 365,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxCSFddZIvuzjbRelMGCf",
+      "licenseKeys": [
+        "31240-46520-35620-35684"
+      ]
+    }
+  ],
+  "totalAmount": 500,
+  "paymentInfo": {
+    "paymentMethod": "card",
+    "paymentIntentId": "pi_3O0dY3SFddZIvuzj1w4kv9p1",
+    "paymentDate": {
+      "$date": "2023-10-13T05:03:06.847Z"
+    },
+    "paymentAmount": 500,
+    "paymentStatus": "paid"
+  },
+  "orderStatus": "completed",
+  "isOrderDelivered": true,
+  "checkoutSessionId": "cs_test_a1b4OfZu3dsSuKNImSZpcMzh3SFmAC3fU4AJB2LS6S0Csac36UJ9BRZmeN",
+  "createdAt": {
+    "$date": "2023-10-13T05:03:06.855Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:03:06.873Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528d7515b273826c478efdb"
+  },
+  "orderId": "330193554605",
+  "user": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "customerAddress": {
+    "city": "Ahmedabad",
+    "country": "IN",
+    "line1": "1001/1002 Isquare",
+    "line2": "Isquare Corporate Park",
+    "postal_code": "380059",
+    "state": "GJ"
+  },
+  "customerPhoneNumber": "+918965412398",
+  "customerEmail": "jaypatel.qs@gmail.com",
+  "orderedItems": [
+    {
+      "lifetime": "false",
+      "price": 500,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "29b1697113437703",
+      "validity": 365,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxCSFddZIvuzjbRelMGCf",
+      "licenseKeys": [
+        "01326-13204-65204-65201"
+      ]
+    },
+    {
+      "lifetime": "false",
+      "price": 1200,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "5f11697113438154",
+      "validity": 900,
+      "quantity": 2,
+      "skuPriceId": "price_1O0NxCSFddZIvuzj8wOV9Tmj",
+      "licenseKeys": [
+        "35412-69587-36520-32014",
+        "36254-21034-65021-46305"
+      ]
+    },
+    {
+      "lifetime": "true",
+      "price": 5000,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "vl01697113438438",
+      "validity": 1234567,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxDSFddZIvuzjXidIF09F",
+      "licenseKeys": [
+        "35620-46821-68531-35689"
+      ]
+    }
+  ],
+  "totalAmount": 7900,
+  "paymentInfo": {
+    "paymentMethod": "card",
+    "paymentIntentId": "pi_3O0e49SFddZIvuzj0Nm5zR1U",
+    "paymentDate": {
+      "$date": "2023-10-13T05:36:17.565Z"
+    },
+    "paymentAmount": 7900,
+    "paymentStatus": "paid"
+  },
+  "orderStatus": "completed",
+  "isOrderDelivered": true,
+  "checkoutSessionId": "cs_test_b10lKeFnQsSQlODgaY8DhatFz0hoY0VU3k2FTWjki1AYTFwLxSk8FTP2ub",
+  "createdAt": {
+    "$date": "2023-10-13T05:36:17.568Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:36:17.585Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528d9121e3a59db7484cd48"
+  },
+  "orderId": "163633989423",
+  "user": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "customerAddress": {
+    "city": "Ahmedabad",
+    "country": "IN",
+    "line1": "1001/1002 Isquare",
+    "line2": "Isquare Corporate Park",
+    "postal_code": "380059",
+    "state": "GJ"
+  },
+  "customerPhoneNumber": "+917896541230",
+  "customerEmail": "jaypatel.qs@gmail.com",
+  "orderedItems": [
+    {
+      "lifetime": true,
+      "price": 500,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "29b1697113437703",
+      "validity": 365,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxCSFddZIvuzjbRelMGCf",
+      "licenseKeys": [
+        "64310-46895-64320-68954"
+      ]
+    },
+    {
+      "lifetime": true,
+      "price": 1200,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "5f11697113438154",
+      "validity": 900,
+      "quantity": 2,
+      "skuPriceId": "price_1O0NxCSFddZIvuzj8wOV9Tmj",
+      "licenseKeys": [
+        "68953-20134-00024-32015",
+        "64310-46895-64320-68954"
+      ]
+    },
+    {
+      "lifetime": true,
+      "price": 5000,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "vl01697113438438",
+      "validity": 1234567,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxDSFddZIvuzjXidIF09F",
+      "licenseKeys": [
+        "32014-65200-62351-00001"
+      ]
+    }
+  ],
+  "totalAmount": 7900,
+  "paymentInfo": {
+    "paymentMethod": "card",
+    "paymentIntentId": "pi_3O0eBOSFddZIvuzj0acraIXO",
+    "paymentDate": {
+      "$date": "2023-10-13T05:43:46.010Z"
+    },
+    "paymentAmount": 7900,
+    "paymentStatus": "paid"
+  },
+  "orderStatus": "completed",
+  "isOrderDelivered": true,
+  "checkoutSessionId": "cs_test_b1JA0r7vw6UFBE0ZZFch5pB1zCs2eadWgKtXTXrP0Md7TZbHTrPmqMU7XN",
+  "createdAt": {
+    "$date": "2023-10-13T05:43:46.015Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:43:46.035Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528db7d94a79ed6591301d5"
+  },
+  "orderId": "403787690926",
+  "user": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "customerAddress": {
+    "city": "Ahmedabad",
+    "country": "IN",
+    "line1": "1001/1002 Isquare",
+    "line2": "Isquare Corporate Park",
+    "postal_code": "380059",
+    "state": "GJ"
+  },
+  "customerPhoneNumber": "+912365874169",
+  "customerEmail": "jaypatel.qs@gmail.com",
+  "orderedItems": [
+    {
+      "lifetime": true,
+      "price": 5000,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "vl01697113438438",
+      "validity": 1234567,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxDSFddZIvuzjXidIF09F",
+      "licenseKeys": [
+        "32014-65200-62351-00001"
+      ]
+    }
+  ],
+  "totalAmount": 5000,
+  "paymentInfo": {
+    "paymentMethod": "card",
+    "paymentIntentId": "pi_3O0eLNSFddZIvuzj1MqIhkt4",
+    "paymentDate": {
+      "$date": "2023-10-13T05:54:05.239Z"
+    },
+    "paymentAmount": 5000,
+    "paymentStatus": "paid"
+  },
+  "orderStatus": "completed",
+  "isOrderDelivered": true,
+  "checkoutSessionId": "cs_test_a10FsrlRTai9EG6t6q3Mo7NNsF28fokVO30i4p0Wt3gEN8NxXDOR4MHkKp",
+  "createdAt": {
+    "$date": "2023-10-13T05:54:05.244Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:54:05.255Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528dc1a94a79ed6591301f8"
+  },
+  "orderId": "202261400602",
+  "user": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "customerAddress": {
+    "city": "Ahmedabad",
+    "country": "IN",
+    "line1": "1001/1002 Isquare",
+    "line2": "Isquare Corporate Park",
+    "postal_code": "380059",
+    "state": "GJ"
+  },
+  "customerPhoneNumber": "+914621378964",
+  "customerEmail": "jaypatel.qs@gmail.com",
+  "orderedItems": [
+    {
+      "lifetime": false,
+      "price": 500,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "29b1697113437703",
+      "validity": 365,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxCSFddZIvuzjbRelMGCf",
+      "licenseKeys": [
+        "98541-45236-62351-32165"
+      ]
+    },
+    {
+      "lifetime": false,
+      "price": 1200,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "5f11697113438154",
+      "validity": 900,
+      "quantity": 2,
+      "skuPriceId": "price_1O0NxCSFddZIvuzj8wOV9Tmj",
+      "licenseKeys": [
+        "65236-98567-98521-98564",
+        "78945-10236-00215-13002"
+      ]
+    },
+    {
+      "lifetime": true,
+      "price": 5000,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "vl01697113438438",
+      "validity": 1234567,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxDSFddZIvuzjXidIF09F",
+      "licenseKeys": [
+        "32014-65200-62351-00001"
+      ]
+    }
+  ],
+  "totalAmount": 7900,
+  "paymentInfo": {
+    "paymentMethod": "card",
+    "paymentIntentId": "pi_3O0eNvSFddZIvuzj1CUBJgRm",
+    "paymentDate": {
+      "$date": "2023-10-13T05:56:42.366Z"
+    },
+    "paymentAmount": 7900,
+    "paymentStatus": "paid"
+  },
+  "orderStatus": "completed",
+  "isOrderDelivered": true,
+  "checkoutSessionId": "cs_test_b1DDE7T0kNqluRPGwf9daJS8zIOsHRNwbNapmP2kDuKc3bKmL2SfDxd8Pu",
+  "createdAt": {
+    "$date": "2023-10-13T05:56:42.368Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:56:42.384Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6528dc4894a79ed65913020e"
+  },
+  "orderId": "30084089842",
+  "user": {
+    "$oid": "651d48412b27cb9c4a21467c"
+  },
+  "customerAddress": {
+    "city": "Ahmedabad",
+    "country": "IN",
+    "line1": "1001/1002 Isquare",
+    "line2": "Isquare Corporate Park",
+    "postal_code": "380059",
+    "state": "GJ"
+  },
+  "customerPhoneNumber": "+916598452014",
+  "customerEmail": "jaypatel.qs@gmail.com",
+  "orderedItems": [
+    {
+      "lifetime": false,
+      "price": 500,
+      "productId": "652155d54d35fce16f46f56b",
+      "productImage": "https://res.cloudinary.com/dxjh2bn5u/image/upload/v1696849867/digizone/products/digi_prods_1696849779197.jpg",
+      "productName": "Test Product 2",
+      "skuCode": "29b1697113437703",
+      "validity": 365,
+      "quantity": 1,
+      "skuPriceId": "price_1O0NxCSFddZIvuzjbRelMGCf",
+      "licenseKeys": []
+    }
+  ],
+  "totalAmount": 500,
+  "paymentInfo": {
+    "paymentMethod": "card",
+    "paymentIntentId": "pi_3O0dSnSFddZIvuzj0SmFWFTL",
+    "paymentDate": {
+      "$date": "2023-10-13T05:57:28.328Z"
+    },
+    "paymentAmount": 500,
+    "paymentStatus": "paid"
+  },
+  "orderStatus": "completed",
+  "isOrderDelivered": true,
+  "checkoutSessionId": "cs_test_a16xymD9uvuqvpfI2EyAyhRRBHfWt6p6H4dher5Xgvcv9vHOtjYKFQxVyt",
+  "createdAt": {
+    "$date": "2023-10-13T05:57:28.331Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-13T05:57:28.336Z"
+  },
+  "__v": 0
+}]
