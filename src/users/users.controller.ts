@@ -41,6 +41,7 @@ export class UsersController {
     if (loginRes.success) {
       response.cookie('_digi_auth_token', loginRes.result?.token, {
         httpOnly: true,
+        secure: true,
       });
     }
     delete loginRes.result?.token;
@@ -48,32 +49,44 @@ export class UsersController {
   }
 
   @Get('/verify-email/:email/:otp')
-  async verifyEmail(@Param('email') email: string, @Param('otp') otp: string){
-    return await this.usersService.verifyEmail(email,otp)
+  async verifyEmail(@Param('email') email: string, @Param('otp') otp: string) {
+    return await this.usersService.verifyEmail(email, otp);
   }
 
   @Get('send-otp-email/:email')
-  async sendOtpEmail(@Param('email') email: string, @Body() forgotPassword: { isForgotPassword: any}){
-    return await this.usersService.sendOtpEmail(email, forgotPassword.isForgotPassword)
+  async sendOtpEmail(
+    @Param('email') email: string,
+    @Body() forgotPassword: { isForgotPassword: any },
+  ) {
+    return await this.usersService.sendOtpEmail(
+      email,
+      forgotPassword.isForgotPassword,
+    );
   }
 
   @Get('forgot-password-email/:email')
-  async forgotPasswordEmail(@Param('email') email: string){
-    return await this.usersService.forgotPasswordEmail(email)
+  async forgotPasswordEmail(@Param('email') email: string) {
+    return await this.usersService.forgotPasswordEmail(email);
   }
 
   @Patch('/forgot-password/:email')
-  async forgotPassword(@Param('email') email: string, @Body() newPassword: { newPassword: string}){
-    return await this.usersService.forgotPassword(email, newPassword.newPassword)
+  async forgotPassword(
+    @Param('email') email: string,
+    @Body() newPassword: { newPassword: string },
+  ) {
+    return await this.usersService.forgotPassword(
+      email,
+      newPassword.newPassword,
+    );
   }
 
   @Put('/logout')
   async logout(@Res() res: Response) {
-    res.clearCookie('_digi_auth_token')
+    res.clearCookie('_digi_auth_token');
     return res.status(HttpStatus.OK).json({
       success: true,
-      message: 'Logout successfully'
-    })
+      message: 'Logout successfully',
+    });
   }
 
   @Get()

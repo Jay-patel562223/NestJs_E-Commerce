@@ -1,7 +1,7 @@
 import { ConfigModule } from '@nestjs/config';
 import jwt from 'jsonwebtoken';
 
-ConfigModule.forRoot({})
+ConfigModule.forRoot({});
 
 export const generateAuthToken = (id: string) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -10,5 +10,5 @@ export const generateAuthToken = (id: string) => {
 };
 
 export const decodeAuthToken = (token: string) => {
-    return jwt.verify(token, process.env.JWT_SECRET)
-}
+  return jwt.verify(token, process.env.JWT_SECRET);
+};

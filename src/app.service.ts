@@ -6,27 +6,27 @@ export class AppService {
     return 'Hello World!';
   }
 
-  orderSuccess(){
+  orderSuccess() {
     return {
       suceess: true,
       message: 'Order Success',
-      result: null
-    }
+      result: null,
+    };
   }
 
-  orderCancel(){
+  orderCancel() {
     return {
       suceess: false,
       message: 'Order Cancel',
-      result: null
-    }
+      result: null,
+    };
   }
 
   getTest(): any {
     return {
-      message: "Test API",
-      result: "Test 123",
-      success: true
-    }
+      message: 'Test API',
+      result: 'Test 123',
+      success: true,
+    };
   }
 }

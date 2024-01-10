@@ -3,5 +3,5 @@ export class GetProductQueryDto {
   category?: string;
   platformType?: string;
   baseType?: string;
-  homepage?: string
+  homepage?: string;
 }

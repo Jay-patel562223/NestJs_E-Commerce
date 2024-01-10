@@ -4,7 +4,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { ProductRepository } from 'src/shared/repositories/product.repository';
 import { STRIPE_CLIENT } from 'src/stripe/constants';
 import Stripe from 'stripe';
-import { Feedbackers, Products } from 'src/shared/schema/products';
+import { Products } from 'src/shared/schema/products';
 import { GetProductQueryDto } from './dto/get-product-query.dto';
 import qs2m from 'qs-to-mongo';
 import cloudinary from 'cloudinary';
@@ -255,7 +255,7 @@ export class ProductsService {
         throw new Error('Product does not exist');
       }
 
-      for (let data of productSkuDto.skuDetails) {
+      for (const data of productSkuDto.skuDetails) {
         const skuCode = Math.random().toString(36).substring(2, 5) + Date.now();
         data.skuCode = skuCode;
         if (!data.stripePriceId) {
@@ -394,7 +394,7 @@ export class ProductsService {
       if (!order) {
         throw new BadRequestException('You have not purchased this product');
       }
-      
+
       const ratings: any[] = [rating];
       product.feedbackDetails.forEach((comment: { rating: any }) =>
         ratings.push(comment.rating),

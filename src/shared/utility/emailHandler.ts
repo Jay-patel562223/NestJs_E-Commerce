@@ -1,7 +1,7 @@
 import { ConfigModule } from '@nestjs/config';
 import nodemailer from 'nodemailer';
 
-ConfigModule.forRoot({})
+ConfigModule.forRoot({});
 
 export const sendEmail = async (
   email: string,
@@ -9,7 +9,7 @@ export const sendEmail = async (
   html: string,
 ) => {
   try {
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
       secure: true, //* true for 465, false for other ports
@@ -19,19 +19,20 @@ export const sendEmail = async (
       },
     });
     //* send mail with defined transport object
-    let info = await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `"E-Commerce " < e-commerce@gmail.com>`, //* sender address
       to: email, //* list of receivers
       subject: subject, //* Subject line
       html: html, //* html body
     });
+    return info;
   } catch (error) {
     throw error;
   }
 };
 
 export const htmlTemplate = (process: string, otp: number) => {
-   return `
+  return `
    <body>
    <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
        <div style="margin:50px auto;width:70%;padding:20px 0">
@@ -54,5 +55,5 @@ export const htmlTemplate = (process: string, otp: number) => {
        </div>
    </div>
 </body>
-  `
-}
+  `;
+};

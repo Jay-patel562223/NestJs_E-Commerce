@@ -8,8 +8,6 @@ import {
   Delete,
 } from '@nestjs/common';
 import { LicenseService } from './license.service';
-import { CreateLicenseDto } from './dto/create-license.dto';
-import { UpdateLicenseDto } from './dto/update-license.dto';
 import { Roles } from 'src/shared/middleware/role.decorators';
 import { userTypes } from 'src/shared/schema/users';
 

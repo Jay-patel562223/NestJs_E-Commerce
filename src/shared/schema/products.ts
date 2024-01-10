@@ -65,7 +65,10 @@ export class Products {
   @Prop({ required: true })
   description: string;
 
-  @Prop({default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png'})
+  @Prop({
+    default:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png',
+  })
   image?: string;
 
   @Prop({ required: true, enum: categoryType })

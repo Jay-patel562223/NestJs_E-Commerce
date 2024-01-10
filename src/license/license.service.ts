@@ -1,6 +1,4 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
-import { CreateLicenseDto } from './dto/create-license.dto';
-import { UpdateLicenseDto } from './dto/update-license.dto';
 import { ProductRepository } from 'src/shared/repositories/product.repository';
 import { LicenseRepository } from 'src/shared/repositories/license.repository';
 import { License } from 'src/shared/schema/license';

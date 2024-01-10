@@ -9,16 +9,16 @@ import { LicenseRepository } from 'src/shared/repositories/license.repository';
 import { userTypes } from 'src/shared/schema/users';
 import { Orders, orderStatus, paymentStatus } from 'src/shared/schema/orders';
 
-interface Data{
-  lifetime: boolean,
-  price: number,
-  productId: string,
-  productImage: string,
-  productName: string,
-  skuCode: string,
-  validity: number,
-  quantity: number,
-  skuPriceId: string
+interface Data {
+  lifetime: boolean;
+  price: number;
+  productId: string;
+  productImage: string;
+  productName: string;
+  skuCode: string;
+  validity: number;
+  quantity: number;
+  skuPriceId: string;
 }
 
 @Injectable()
@@ -207,10 +207,11 @@ export class OrdersService {
         checkoutSessionId: session.id,
         orderedItems: lineItems.data.map((item) => {
           const data: Data = {
-            lifetime: String(item.price.metadata.lifetime).toLowerCase() === "true",
+            lifetime:
+              String(item.price.metadata.lifetime).toLowerCase() === 'true',
             price: Number(item.price.metadata.price),
             productId: item.price.metadata.productId,
-            productImage:item.price.metadata.productImage,
+            productImage: item.price.metadata.productImage,
             productName: item.price.metadata.productName,
             skuCode: item.price.metadata.skuCode,
             validity: Number(item.price.metadata.validity),

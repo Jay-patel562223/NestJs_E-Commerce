@@ -33,15 +33,15 @@ export class AllExceptionFilter implements ExceptionFilter {
       exception instanceof HttpException
         ? exception.getResponse()
         : String(exception.message);
-    
-        const responseBody = {
+
+    const responseBody = {
       success: false,
       statusCode: httpStatus,
       timestamp: new Date().toISOString(),
       path: httpAdapter.getRequestUrl(ctx.getRequest()),
       message:
-      (exceptionResponse as HttpExceptionResponse).error ||
-      (exceptionResponse as HttpExceptionResponse).message ||
+        (exceptionResponse as HttpExceptionResponse).error ||
+        (exceptionResponse as HttpExceptionResponse).message ||
         exceptionResponse ||
         'Something went wrong!',
       errorResponse: exceptionResponse as HttpExceptionResponse,

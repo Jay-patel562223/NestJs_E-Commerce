@@ -55,7 +55,7 @@ export class UsersService {
         otpExpiryTime,
       });
       if (newUser.type !== userTypes.ADMIN) {
-        let html = htmlTemplate('sign up', otp);
+        const html = htmlTemplate('sign up', otp);
         sendEmail(newUser.email, 'Verify Your Email', html);
       }
 
@@ -186,7 +186,7 @@ export class UsersService {
           otpExpiryTime,
         },
       );
-      let html = htmlTemplate(
+      const html = htmlTemplate(
         isForgotPassword == 1 ? 'forgot password' : 'sign up',
         otp,
       );
@@ -230,7 +230,7 @@ export class UsersService {
           otpExpiryTime,
         },
       );
-      let html = htmlTemplate('forgot password', otp);
+      const html = htmlTemplate('forgot password', otp);
       sendEmail(user.email, 'Forgot Your Password', html);
 
       return {
@@ -297,6 +297,7 @@ export class UsersService {
     return `This action returns a #${id} user`;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   update(id: number, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} user`;
   }

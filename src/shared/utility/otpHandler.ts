@@ -5,9 +5,6 @@ export const generateHashOtp = async (otp: string) => {
   return await bcrypt.hash(otp, salt);
 };
 
-export const compareOtp = async (
-  otp?: string,
-  hashOtp?: string | any,
-) => {
+export const compareOtp = async (otp?: string, hashOtp?: string | any) => {
   return await bcrypt.compare(otp, hashOtp);
 };

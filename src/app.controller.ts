@@ -8,21 +8,20 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
-  } 
+  }
 
   @Get('order-success')
   orderSuccess() {
-    return this.appService.orderSuccess()
+    return this.appService.orderSuccess();
   }
 
   @Get('order-cancel')
   orderCancel() {
-    return this.appService.orderCancel()
+    return this.appService.orderCancel();
   }
 
-  @Get("/test")
+  @Get('/test')
   getTest(): string {
     return this.appService.getTest();
   }
-  
 }
